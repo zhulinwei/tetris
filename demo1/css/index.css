@@ -1,0 +1,57 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.game-wrapper {
+  float: left;
+  margin: 50px;
+}
+#game-board table {
+  border: 1px solid #ddd;
+}
+#game-board table td {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: 0.5px solid #ddd;
+}
+#game-board table td[status='1'],
+#game-board table td[status='2'] {
+  background-color: #c8bfe7;
+}
+.preview-wrapper {
+  float: left;
+  margin: 50px 0;
+  max-width: 200px;
+  overflow: hidden;
+}
+#preview-board table {
+  width: 130px;
+}
+#preview-board table td {
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+#preview-board table td[status='1'] {
+  background-color: #c8bfe7;
+}
+.preview-wrapper p {
+  line-height: 40px;
+  font-size: 16px;
+  color: #666;
+}
+.preview-wrapper .game-score {
+  padding-left: 10px;
+}
+.preview-wrapper #start-game {
+  width: 130px;
+  height: 40px;
+  margin-top: 0px;
+  border-radius: 5px;
+  background: #80BD01;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}

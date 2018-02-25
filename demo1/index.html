@@ -8,14 +8,17 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="game-wrapper">
-    <div id="game-board"></div>
+  <div class="tetris">
+    <div class="game-wrapper">
+        <div id="game-board"></div>
+      </div>
+      <div class="preview-wrapper">
+        <div id="preview-board"></div>
+        <p class="game-score">游戏得分：<span id="game-score">0</span>分</p>
+        <button id="start-game">开始游戏</button>
+      </div>
   </div>
-  <div class="preview-wrapper">
-    <div id="preview-board"></div>
-    <p class="game-score">游戏得分：<span id="game-score">0</span>分</p>
-    <button id="start-game">开始游戏</button>
-  </div>
+
   <script src="./js/index.js"></script>
 </body>
 </html>

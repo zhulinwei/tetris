@@ -1,7 +1,3 @@
-'use strict'
-
-
-
 const GameStatus = {
   INIT: 0,
   CONTINUE: 1,
@@ -23,221 +19,6 @@ const Direction = {
   DOWN: 'down',
   ROTATE: 'rotate',
 };
-
-class Block {
-  constructor() {
-    this.blocks = {
-      0: [
-        [
-          [1, 1, 1, 1],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
-        ],
-        [
-          [1, 1, 1, 1],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
-        ],
-        
-      ],
-      1: [
-        [
-          [1, 0, 0, 0],
-          [1, 1, 1, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [1, 1, 0, 0],
-          [1, 0, 0, 0],
-          [1, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [1, 1, 1, 0],
-          [0, 0, 1, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
-          [1, 1, 0, 0],
-          [0, 0, 0, 0],
-        ],
-      ],
-      2: [
-        [
-          [1, 1, 1, 0],
-          [1, 0, 0, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [1, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [0, 0, 1, 0],
-          [1, 1, 1, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [1, 0, 0, 0],
-          [1, 0, 0, 0],
-          [1, 1, 0, 0],
-          [0, 0, 0, 0],
-        ],
-
-      ],
-      3: [
-        [
-          [1, 1, 0, 0],
-          [1, 1, 0, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [1, 1, 0, 0],
-          [1, 1, 0, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [1, 1, 0, 0],
-          [1, 1, 0, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [1, 1, 0, 0],
-          [1, 1, 0, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-      ],
-      4: [
-        [
-          [0, 1, 1, 0],
-          [1, 1, 0, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [1, 0, 0, 0],
-          [1, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [0, 1, 1, 0],
-          [1, 1, 0, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [1, 0, 0, 0],
-          [1, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 0, 0, 0],
-        ],
-      ],
-      5: [
-        [
-          [1, 1, 0, 0],
-          [0, 1, 1, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [0, 1, 0, 0],
-          [1, 1, 0, 0],
-          [1, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [1, 1, 0, 0],
-          [0, 1, 1, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [0, 1, 0, 0],
-          [1, 1, 0, 0],
-          [1, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-      ],
-      6: [
-        [
-          [0, 1, 0, 0],
-          [1, 1, 1, 0],
-          [0, 0, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [0, 1, 0, 0],
-          [0, 1, 1, 0],
-          [0, 1, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [0, 0, 0, 0],
-          [1, 1, 1, 0],
-          [0, 1, 0, 0],
-          [0, 0, 0, 0],
-        ],
-        [
-          [0, 1, 0, 0],
-          [1, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 0, 0, 0],
-        ],
-
-      ],
-    }
-  }
-
-  static cloneBlock(block) {
-    let tmps = [];
-    for(let i = 0; i < block.length; i++) {
-      let tmp = [];
-      for(let j = 0; j < block[i].length; j++) {
-        tmp.push(block[i][j]);
-      }
-      tmps.push(tmp);
-    }
-    return tmps;
-  }
-
-  rotate(type, direction) {
-    const next = (direction + 1) % 4;
-    return { type, direction: next, shape: this.blocks[type][next] };
-  }
-
-  create() {
-    const type = Math.floor((Math.random() * 10) % 7);
-    const direction = 0;
-    return { type, direction, shape: this.blocks[type][direction] };
-  }
-}
 
 class Tetris {
   constructor() {
@@ -409,7 +190,6 @@ class Tetris {
       if (!fallBlockIsValid) {
         alert('游戏结束了');
         clearInterval(this.timer)
-        this.gameStatus = GameStatus.END;
         return this.timer = null;
       }
       Tetris._drawBlock(container1, this.coordinates);
@@ -450,6 +230,7 @@ class Tetris {
 
   static _init(container, matrix) {
     let table = document.createElement('table');
+    console.log(table);
     for(let i = 0; i < matrix.length; i++) {
       let tr = document.createElement('tr');
       for(let j = 0; j < matrix[i].length; j++) {
@@ -457,9 +238,13 @@ class Tetris {
         td.setAttribute('status', BlockStatus.NORMAL);
         tr.appendChild(td);
       };
+      console.log('1');
       table.appendChild(tr);
     }
+    console.log('2');
+    console.log(container);
     container.appendChild(table);
+    console.log('3');
   }
 
   // 清除画板上原有的样式
@@ -497,6 +282,7 @@ class Tetris {
   static _drawBlock(container, matrix) {
     const table = container.getElementsByTagName('table')[0];
     matrix.forEach(item => table.rows[item.i].cells[item.j].setAttribute('status',BlockStatus.FALLING));
+    matrix.forEach(item => table.rows[item.i].cells[item.j].setAttribute('statu1',123));
   }
 
   // 获取方块坐标信息
@@ -504,7 +290,7 @@ class Tetris {
     const coordinates = [];
     for(let i = 0; i <matrix.length; i++) {
       for(let j = 0; j < matrix[i].length; j++) {
-        if (matrix[i][j] === BlockStatus.FALLING) {
+        if (matrix[i][j] === 1) {
           coordinates.push({
             i: this.position[0] + i,
             j: this.position[1] + j,
@@ -539,8 +325,8 @@ class Tetris {
 
   keyControl(event, container1, container2, scoreDom) {
     const keyCode = event.keyCode;
-    const gameStatus = tetris.gameStatus;
-    if (gameStatus !== GameStatus.CONTINUE) return;
+    const gameStatus = tetris.GameStatus;
+    if (gameStatus !== GameStatus.FALLING) return;
     if (keyCode === 37) Tetris._moveLeft.call(this, container1);
     else if (keyCode === 38) Tetris._rotate.call(this, container1);
     else if (keyCode === 39) Tetris._moveRight.call(this, container1);
@@ -567,23 +353,11 @@ class Tetris {
     // 绑定键盘事件
     document.onkeydown = (event) => tetris.keyControl.call(that, event, container1, container2, scoreDom);
 
-    that.gameStatus = GameStatus.CONTINUE;
     // 游戏正式开始
     that.timer = setInterval(() => {
       Tetris._moveNext.call(that, container1, container2, scoreDom);
     }, this.speed);
   }
 }
-
-const startGame = document.getElementById('start-game');
-const scoreDom = document.getElementById('game-score');
-const gameDom = document.getElementById('game-board');
-const previewDom = document.getElementById('preview-board');
-
-const tetris = new Tetris();
-tetris.init(gameDom, previewDom);
-
-startGame.onclick = function() {
-  tetris.start(gameDom, previewDom, scoreDom);
-  startGame.innerHTML = '重新开始';
-}
+// export default new Tetris();
+export default Tetris;
